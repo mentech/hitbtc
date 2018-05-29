@@ -16,7 +16,7 @@ type Balance struct {
 func (h *HitBtc) GetBalances() (balances []Balance, err error) {
 
 	respch := make(chan []byte)
-	errch := make(chan error)
+	errch := make(chan error) //bizde error olmaz olmuşsa da yanlışlıkla olmuştur
 
 	go h.tradeRequest("get", "/api/2/trading/balance", nil, respch, errch)
 
